@@ -1,0 +1,101 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #8789C0;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-header-title {
+  font-size: 3em;
+  color: #26dfff;
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
+
+.App-header-title span:first-child {
+  color: white;
+}
+
+.App-header-tagline {
+  margin-top: 0px;
+}
+
+.App-signup {
+  background-color: #26DFFF;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-signup {
+  display: block;
+  font-size: 1.5em;
+  flex: none;
+}
+
+.App-upcoming-events-title {
+  font-size: 2em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: gray;
+}
+
+span.App-upcoming-events-react {
+  color: #26dfff;
+}
+
+.App-upcoming-events-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.App-upcoming-events-div span {
+  background-color: #e0e0e0;
+  border: 4px solid #c3c3c3;
+  height: 250px;
+  width: 250px;
+  max-width: 250px;
+  flex: 1 1 auto;
+  margin: 5px;
+  text-align: center;
+  overflow: scroll;
+}
+
+.App-signup-text {
+  position: relative;
+  top: 10%;
+  transform: translateY(-50%);
+}
+
+.App-signup-24-hours {
+  font-size: 1rem;
+}
+
+.event-detail {
+  text-overflow: ellipsis;
+  word-wrap: break-word;  
+}
+
+.event-name {
+  font-size: 1.25rem;
+  color: #252731;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.event-date-location {
+  color: #252731;  
+  margin-bottom: 10px;
+}
+
+.event-notes {
+  color: #707175;  
+  margin-top: 10px;  
+  margin-bottom: 10px;
+}
