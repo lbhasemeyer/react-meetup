@@ -108,7 +108,7 @@ span.App-upcoming-events-react {
   margin-top: 20px;
 }
 
-.App-signup-inputs-and-button input[type="text"] {
+.App-signup-inputs-and-button input {
   width: 250px;
   border: 1px solid #ccc;
   box-shadow: inset 0 1px 3px #ddd;
