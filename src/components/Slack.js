@@ -5,6 +5,7 @@ class Slack extends Component {
 	constructor(props) {
     super(props);
     this._validateEmail = this._validateEmail.bind(this);
+    this._validateName = this._validateName.bind(this);    
     this._changeEmail = this._changeEmail.bind(this);
     this._changeFirstLastName = this._changeFirstLastName.bind(this);
     this._signupClicked = this._signupClicked.bind(this);
@@ -15,26 +16,41 @@ class Slack extends Component {
 		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   }
+  _validateName(name) {
+		if(name && name.length > 0){
+	    return true;
+		} else {
+			return false;
+		}
+  }
   _changeEmail(event) {
+  	this.setState({email: event.target.value});
   	if(this._validateEmail(event.target.value)){
 	  	this.setState({emailValid: true});
+	  	document.getElementById("emailInput").style.border = null;
+  	} else {
+  		this.setState({emailValid: false});
+  		document.getElementById("emailInput").style.border = '2px solid #8a83c2';
   	}
-  	this.setState({email: event.target.value});
   }
   _changeFirstLastName(event) {
-  	if(event.target.value.length > 0){
+  	console.log('hit');
+  	this.setState({firstLastName: event.target.value});  	
+  	if(this._validateName(event.target.value)){
 	  	this.setState({nameValid: true});
+  	} else {
+  		this.setState({nameValid: false});
+  		document.getElementById("nameInput").style.border = '2px solid #8a83c2';
   	}
-  	this.setState({firstLastName: event.target.value});
   }
    _signupClicked() {
 			document.getElementById("emailInput").style.border = null;
 			document.getElementById("nameInput").style.border = null;
    	if(!this.state.emailValid){
 			document.getElementById("emailInput").style.border = '2px solid #8a83c2';
-   	} if(!this.state.firstLastName){
+   	} if(!this.state.nameValid){
 			document.getElementById("nameInput").style.border = '2px solid #8a83c2';
-   	} else {
+   	} else if(this.state.emailValid && this.state.nameValid) {
 	   	//THIS IS WHERE THE EMAIL AND NAME COME
    		console.log(this.state.email);
 	  	console.log(this.state.firstLastName);
