@@ -26,7 +26,7 @@
 
 .App-signup {
   background-color: #26DFFF;
-  height: 150px;
+  height: 200px;
   padding: 20px;
   color: white;
 }
@@ -34,7 +34,7 @@
 .App-signup {
   display: block;
   font-size: 1.5em;
-  flex: none;
+  overflow: hidden;
 }
 
 .App-upcoming-events-title {
@@ -68,14 +68,17 @@ span.App-upcoming-events-react {
 }
 
 .App-signup-text {
-  position: relative;
-  top: 10%;
-  transform: translateY(-50%);
+  transform: translateY(-20%);
+  font-size: 2rem;
 }
 
-.App-signup-24-hours {
+/*.App-signup-24-hours {
   font-size: 1rem;
-}
+  float: right;
+  width: calc(33% - 15px);
+  text-align: left;
+  display: none;
+}*/
 
 .event-detail {
   text-overflow: ellipsis;
@@ -98,4 +101,43 @@ span.App-upcoming-events-react {
   color: #707175;  
   margin-top: 10px;  
   margin-bottom: 10px;
+}
+
+.App-signup-inputs-and-button {
+  display: flex;
+  margin-top: 20px;
+}
+
+.App-signup-inputs-and-button input[type="text"] {
+  width: 250px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  flex: 1;
+  outline: none;
+  font-size: 1rem;
+}
+
+.App-signup-inputs-and-button button {
+  height: 40px;
+  border-radius: 4px;
+  background-color: white;
+  width: 150px;
+  font-size: 1rem;
+  flex: 1;
+  color: #8a83c2;
+  background-color: white;
+  outline: none;
+}
+
+.App-signup-inputs-and-button input[type="text"]:nth-child(2) {
+  margin-left: 10px;
+  margin-right: 10px;
 }
