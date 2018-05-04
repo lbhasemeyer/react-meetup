@@ -24,20 +24,20 @@ class Events extends Component {
     let allEvents = [];
     sortedEvents.forEach(function(event){
       let oneEvent = (<span key={event.name}>
-                        <div className="event-detail event-name">{event.name}</div>
-                        <div className="event-detail event-date-location">{event.date} at {event.location}</div>
-                        <div className="event-detail event-notes">{event.notes}</div>
+                        <div className="event__detail-name">{event.name}</div>
+                        <div className="event__detail-date-location">{event.date} at {event.location}</div>
+                        <div className="event__detail-notes">{event.notes}</div>
                       </span>);
       allEvents.push(oneEvent);
     });
     return (
-        <div className="App-upcoming-events">
-          <div className="App-upcoming-events-title">
+        <div className="events">
+          <div className="events__title">
             Upcoming 
-            <span className="App-upcoming-events-react"> React </span>
+            <span className="events__react"> React </span>
             Events in Colorado
           </div>
-          <div className="App-upcoming-events-div">
+          <div className="events__div">
             {allEvents}
 	       </div>
         </div>

@@ -25,32 +25,25 @@ class Slack extends Component {
   }
   _changeEmail(event) {
   	this.setState({email: event.target.value});
-  	if(this._validateEmail(event.target.value)){
+  	if(this._validateEmail(event.target.value) === true){
 	  	this.setState({emailValid: true});
 	  	document.getElementById("emailInput").style.border = null;
   	} else {
   		this.setState({emailValid: false});
-  		document.getElementById("emailInput").style.border = '2px solid #8a83c2';
   	}
   }
   _changeFirstLastName(event) {
-  	console.log('hit');
   	this.setState({firstLastName: event.target.value});  	
-  	if(this._validateName(event.target.value)){
+  	if(this._validateName(event.target.value) === true){
 	  	this.setState({nameValid: true});
   	} else {
   		this.setState({nameValid: false});
-  		document.getElementById("nameInput").style.border = '2px solid #8a83c2';
   	}
   }
    _signupClicked() {
 			document.getElementById("emailInput").style.border = null;
 			document.getElementById("nameInput").style.border = null;
-   	if(!this.state.emailValid){
-			document.getElementById("emailInput").style.border = '2px solid #8a83c2';
-   	} if(!this.state.nameValid){
-			document.getElementById("nameInput").style.border = '2px solid #8a83c2';
-   	} else if(this.state.emailValid && this.state.nameValid) {
+   	if(this.state.emailValid && this.state.nameValid) {
 	   	//THIS IS WHERE THE EMAIL AND NAME COME
    		console.log(this.state.email);
 	  	console.log(this.state.firstLastName);
@@ -70,20 +63,20 @@ class Slack extends Component {
 	  }
   }
   render() {
-  	let emailValidated = (this.state.emailValid);
-  	let nameValidated = (this.state.nameValid);
   	let buttonDisabled = (!this.state.emailValid || !this.state.nameValid)
   	let buttonWhite = !buttonDisabled || this.state.buttonText === 'Thanks! Please allow 24 hours for invite';
+    let emailHasBorder = this.state.emailValid === false;
+    let nameHasBorder = this.state.nameValid === false;
     return (
-    	<div className="App-signup">
-			<div className="App-signup-text">
-				<div style={{display: 'inline-block'}}>Join our</div>
+    	<div className="signup">
+			<div className="signup__text">
+				<div>{this.state.emailValid}Join our</div>
 				<img src={SlackLogo} alt='' height='80px' style={{position: 'relative', top: '50%', transform: 'translateY(37%)'}} />
-				<div style={{display: 'inline-block'}}>channel</div>
+				<div>channel</div>
 			</div>
-			<div className="App-signup-inputs-and-button">
-				<input type="email" id="emailInput" name="email" placeholder="Email" onClick={this._resetButtonText} onChange={this._changeEmail} />
-				<input type="text" id="nameInput" name="firstlastname" placeholder="First and Last Name" onClick={this._resetButtonText} onChange={this._changeFirstLastName} />
+			<div className="signup__inputs-and-button">
+				<input type="email" id="emailInput" name="email" placeholder="Email" style={{border: emailHasBorder ? '2px solid #8a83c2' : null}} onClick={this._resetButtonText} onChange={this._changeEmail} />
+				<input type="text" id="nameInput" name="firstlastname" placeholder="First and Last Name" style={{border: nameHasBorder ? '2px solid #8a83c2' : null}} onClick={this._resetButtonText} onChange={this._changeFirstLastName} />
 				<button onClick={this._signupClicked} style={{backgroundColor: buttonWhite ? 'white' : 'lightGray'}}>{this.state.buttonText}</button>
 			</div>
 		</div>
