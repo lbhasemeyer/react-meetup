@@ -45,12 +45,8 @@ class Slack extends Component {
 			document.getElementById("emailInput").style.border = null;
 			document.getElementById("nameInput").style.border = null;
    	if(this.state.emailValid && this.state.nameValid) {
-	   	//THIS IS WHERE THE EMAIL AND NAME COME
-   		// console.log(this.state.email);
-		// console.log(this.state.firstLastName);
-		  
+	   	//This is where the name and email are saved from
 		this.props.addItem(this.state.firstLastName, this.state.email);
-
 	  	this.setState({buttonText: "Thanks! Please allow 24 hours for invite"});
 	  	this.setState({firstLastName: null});
 	  	this.setState({email: null});
