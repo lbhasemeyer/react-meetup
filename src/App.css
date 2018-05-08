@@ -6,6 +6,7 @@
   background-color: #8789C0;
   height: 150px;
   padding: 20px;
+  padding-top: 15px;
   color: white;
 }
 
@@ -62,12 +63,8 @@ span.events__react {
 }
 
 .signup__text {
-  transform: translateY(-20%);
   font-size: 2rem;
-}
-
-.signup__text div {
-  display: inline-block;
+  margin-top: 20px;
 }
 
 .event__detail {
@@ -95,7 +92,11 @@ span.events__react {
 
 .signup__inputs-and-button {
   display: flex;
-  margin-top: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 5px;
+  padding: 0 1%;
 }
 
 .signup__inputs-and-button input {
@@ -111,8 +112,10 @@ span.events__react {
   padding-top: 10px;
   padding-bottom: 10px;
   flex: 1;
+  margin: 0 1%;
   outline: none;
   font-size: 1rem;
+  margin-top: 10px;
 }
 
 .signup__inputs-and-button button {
@@ -122,12 +125,9 @@ span.events__react {
   width: 150px;
   font-size: 1rem;
   flex: 1;
+  margin: 0 1%;
   color: #8a83c2;
   background-color: white;
   outline: none;
-}
-
-.signup__inputs-and-button input[type="text"]:nth-child(2) {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-top: 10px;
 }

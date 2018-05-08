@@ -48,6 +48,7 @@ class Slack extends Component {
    		console.log(this.state.email);
 	  	console.log(this.state.firstLastName);
 	  	this.setState({buttonText: "Thanks! Please allow 24 hours for invite"});
+      //reset state
 	  	this.setState({firstLastName: null});
 	  	this.setState({email: null});
 	  	this.setState({emailValid: false});
@@ -67,19 +68,20 @@ class Slack extends Component {
   	let buttonWhite = !buttonDisabled || this.state.buttonText === 'Thanks! Please allow 24 hours for invite';
     let emailHasBorder = this.state.emailValid === false;
     let nameHasBorder = this.state.nameValid === false;
+    // style={{transform: 'translateY(37%)'}}
     return (
     	<div className="signup">
-			<div className="signup__text">
-				<div>{this.state.emailValid}Join our</div>
-				<img src={SlackLogo} alt='' height='80px' style={{position: 'relative', top: '50%', transform: 'translateY(37%)'}} />
-				<div>channel</div>
-			</div>
-			<div className="signup__inputs-and-button">
-				<input type="email" id="emailInput" name="email" placeholder="Email" style={{border: emailHasBorder ? '2px solid #8a83c2' : null}} onClick={this._resetButtonText} onChange={this._changeEmail} />
-				<input type="text" id="nameInput" name="firstlastname" placeholder="First and Last Name" style={{border: nameHasBorder ? '2px solid #8a83c2' : null}} onClick={this._resetButtonText} onChange={this._changeFirstLastName} />
-				<button onClick={this._signupClicked} style={{backgroundColor: buttonWhite ? 'white' : 'lightGray'}}>{this.state.buttonText}</button>
-			</div>
-		</div>
+  			<div className="signup__text">
+  				<span>{this.state.emailValid}Join our </span>
+  				<span><img src={SlackLogo} alt='' style={{marginBottom: -8}}/></span>
+  				<span> channel</span>
+  			</div>
+  			<div className="signup__inputs-and-button">
+  				<input type="email" id="emailInput" name="email" placeholder="Email" style={{border: emailHasBorder ? '2px solid #8a83c2' : null}} onClick={this._resetButtonText} onChange={this._changeEmail} />
+  				<input type="text" id="nameInput" name="firstlastname" placeholder="First and Last Name" style={{border: nameHasBorder ? '2px solid #8a83c2' : null}} onClick={this._resetButtonText} onChange={this._changeFirstLastName} />
+  				<button onClick={this._signupClicked} style={{backgroundColor: buttonWhite ? 'white' : 'lightGray'}}>{this.state.buttonText}</button>
+  			</div>
+  		</div>
     );
   }
 }
