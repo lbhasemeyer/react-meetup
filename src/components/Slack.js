@@ -28,7 +28,6 @@ class Slack extends Component {
   	this.setState({email: event.target.value});
   	if(this._validateEmail(event.target.value) === true){
 	  	this.setState({emailValid: true});
-	  	document.getElementById("emailInput").style.border = null;
   	} else {
   		this.setState({emailValid: false});
   	}
@@ -42,11 +41,9 @@ class Slack extends Component {
   	}
   }
    _signupClicked() {
-			document.getElementById("emailInput").style.border = null;
-			document.getElementById("nameInput").style.border = null;
    	if(this.state.emailValid && this.state.nameValid) {
 	   	//This is where the name and email are saved from
-		this.props.addItem(this.state.firstLastName, this.state.email);
+		  this.props.addItem(this.state.firstLastName, this.state.email);
 	  	this.setState({buttonText: "Thanks! Please allow 24 hours for invite"});
       //reset state
 	  	this.setState({firstLastName: null});
