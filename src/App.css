@@ -28,7 +28,7 @@
 .signup {
   background-color: #26DFFF;
   height: 200px;
-  padding: 20px;
+  padding-top: 30px;
   color: white;
 }
 
@@ -130,4 +130,33 @@ span.events__react {
   background-color: white;
   outline: none;
   margin-top: 10px;
+}
+
+@media screen and (max-width: 425px) {
+  .header__title {
+    margin-top: 10px;
+    font-size: 2.5rem;
+  }
+  .signup__text {
+    margin-top: 0px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .header__title {
+    margin-top: 0px;
+    font-size: 2.5rem;
+  }
+  .signup__text {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header__title {
+    margin-top: 10px;
+    font-size: 2.25rem;
+  }
+  .signup {
+    padding-top: 15px;
+  }
 }
