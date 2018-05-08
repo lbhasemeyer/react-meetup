@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SlackLogo from '../slackLogo.svg';
+import { connect } from 'react-firebase';
 
 class Slack extends Component {
 	constructor(props) {
@@ -44,9 +45,8 @@ class Slack extends Component {
 			document.getElementById("emailInput").style.border = null;
 			document.getElementById("nameInput").style.border = null;
    	if(this.state.emailValid && this.state.nameValid) {
-	   	//THIS IS WHERE THE EMAIL AND NAME COME
-   		console.log(this.state.email);
-	  	console.log(this.state.firstLastName);
+	   	//This is where the name and email are saved from
+		this.props.addItem(this.state.firstLastName, this.state.email);
 	  	this.setState({buttonText: "Thanks! Please allow 24 hours for invite"});
       //reset state
 	  	this.setState({firstLastName: null});
@@ -86,4 +86,13 @@ class Slack extends Component {
   }
 }
 
-export default Slack;
+const MapPropsToFirebase = (props, ref) => ({
+	addItem: (name, email) => ref('item').push({
+		timeStamp: Date.now(),
+		name: name,
+		email: email,
+		sent: false
+	})
+})
+  
+export default connect(MapPropsToFirebase)(Slack);
