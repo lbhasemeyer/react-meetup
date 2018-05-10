@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SlackLogo from '../slackLogo.svg';
+import SlackLogo from '../assets/slackLogo.svg';
 import { connect } from 'react-firebase';
 
 class Slack extends Component {
@@ -65,7 +65,6 @@ class Slack extends Component {
   	let buttonWhite = !buttonDisabled || this.state.buttonText === 'Thanks! Please allow 24 hours for invite';
     let emailHasBorder = this.state.emailValid === false;
     let nameHasBorder = this.state.nameValid === false;
-    // style={{transform: 'translateY(37%)'}}
     return (
     	<div className="signup">
   			<div className="signup__text">

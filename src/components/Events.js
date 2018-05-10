@@ -30,6 +30,7 @@ class Events extends Component {
                       </span>);
       allEvents.push(oneEvent);
     });
+    
     return (
         <div className="events">
           <div className="events__title">
