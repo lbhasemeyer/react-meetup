@@ -5,6 +5,7 @@ import './App.css';
 import Header from './components/Header.js';
 import Slack from './components/Slack.js';
 import Events from './components/Events.js';
+import Footer from './components/Footer.js';
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyD__hNVD-b4rQf6E7h3OuILSA-8WlLNrBw",
@@ -24,6 +25,7 @@ class App extends Component {
           <Slack />
         </Provider>
         <Events />
+        <Footer />
       </div>
     );
   }
