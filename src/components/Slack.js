@@ -6,7 +6,7 @@ class Slack extends Component {
 	constructor(props) {
     super(props);
     this._validateEmail = this._validateEmail.bind(this);
-    this._validateName = this._validateName.bind(this);    
+    this._validateName = this._validateName.bind(this);
     this._changeEmail = this._changeEmail.bind(this);
     this._changeFirstLastName = this._changeFirstLastName.bind(this);
     this._signupClicked = this._signupClicked.bind(this);
@@ -33,7 +33,7 @@ class Slack extends Component {
   	}
   }
   _changeFirstLastName(event) {
-  	this.setState({firstLastName: event.target.value});  	
+  	this.setState({firstLastName: event.target.value});
   	if(this._validateName(event.target.value) === true){
 	  	this.setState({nameValid: true});
   	} else {
@@ -43,7 +43,7 @@ class Slack extends Component {
    _signupClicked() {
    	if(this.state.emailValid && this.state.nameValid) {
 	   	//This is where the name and email are saved from
-		  this.props.addItem(this.state.firstLastName, this.state.email);
+		  // this.props.addItem(this.state.firstLastName, this.state.email);
 	  	this.setState({buttonText: "Thanks! Please check your email, we will send you an invite within 24 hours."});
       //reset state
 	  	this.setState({firstLastName: null});
@@ -62,7 +62,6 @@ class Slack extends Component {
   }
   render() {
   	let buttonDisabled = (!this.state.emailValid || !this.state.nameValid)
-  	let buttonWhite = !buttonDisabled;
     let emailHasBorder = this.state.emailValid === false;
     let nameHasBorder = this.state.nameValid === false;
 		let inputs = (this.state.buttonText === 'Thanks! Please check your email, we will send you an invite within 24 hours.') ?
@@ -72,7 +71,7 @@ class Slack extends Component {
 			(<div className="signup__inputs-and-button">
 				<input type="email" id="emailInput" name="email" placeholder="Email" style={{border: emailHasBorder ? '2px solid #8a83c2' : null}} onClick={this._resetButtonText} onChange={this._changeEmail} />
 				<input type="text" id="nameInput" name="firstlastname" placeholder="First and Last Name" style={{border: nameHasBorder ? '2px solid #8a83c2' : null}} onClick={this._resetButtonText} onChange={this._changeFirstLastName} />
-				<button onClick={this._signupClicked} style={{backgroundColor: buttonWhite ? 'white' : 'lightGray'}}>{this.state.buttonText}</button>
+				<button onClick={this._signupClicked} style={{backgroundColor: buttonDisabled ? 'lightGray' : 'white'}}>{this.state.buttonText}</button>
 			</div>);
     return (
     	<div className="signup">
@@ -95,5 +94,5 @@ const MapPropsToFirebase = (props, ref) => ({
 		sent: false
 	})
 })
-  
+
 export default connect(MapPropsToFirebase)(Slack);
