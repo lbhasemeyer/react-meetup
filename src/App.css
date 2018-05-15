@@ -144,13 +144,28 @@ span.events__react {
   margin-top: 10px;
 }
 
+.signup__div-success {
+  margin-top: 35px;
+}
+
 @media screen and (max-width: 425px) {
   .header__title {
     margin-top: 10px;
     font-size: 2.5rem;
   }
+  .header__title span {
+    display: block;
+  }
   .signup__text {
     margin-top: 0px;
+  }
+  .signup {
+    padding-bottom: 10px;
+    padding-top: 20px;
+  }
+  .signup__inputs-and-button input {
+    flex: none;
+    width: 100%;
   }
 }
 @media screen and (max-width: 375px) {
