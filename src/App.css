@@ -28,6 +28,8 @@
 .footer {
   background-color: #8789C0;
   margin-top: 50px;
+  height: 100px;
+  bottom: 0px;
   padding: 20px;
   padding-top: 15px;
   font-size: 0.75em;

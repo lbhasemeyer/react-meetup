@@ -26,7 +26,7 @@ class Events extends Component {
     let allEvents = [];
     // sortedEvents.forEach(function(event){
     events.forEach(function(event){
-      let oneEvent = (<span key={event.name}>
+      let oneEvent = (<span key={event.name + event.date}>
                         <div className="event__detail-name">{event.name}</div>
                         <div className="event__detail-date-location">{event.date} at {event.location}</div>
                         <div className="event__detail-notes">{event.notes}</div>
