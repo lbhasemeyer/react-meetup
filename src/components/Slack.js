@@ -71,7 +71,7 @@ class Slack extends Component {
 			(<div className="signup__inputs-and-button">
 				<input type="email" id="emailInput" name="email" placeholder="Email" style={{border: emailHasBorder ? '2px solid #8a83c2' : null}} onClick={this._resetButtonText} onChange={this._changeEmail} />
 				<input type="text" id="nameInput" name="firstlastname" placeholder="First and Last Name" style={{border: nameHasBorder ? '2px solid #8a83c2' : null}} onClick={this._resetButtonText} onChange={this._changeFirstLastName} />
-				<button onClick={this._signupClicked} style={{backgroundColor: buttonDisabled ? 'lightGray' : 'white'}}>{this.state.buttonText}</button>
+				<button onClick={this._signupClicked} style={{backgroundColor: buttonDisabled ? 'lightGray' : '#8789C0'}}>{this.state.buttonText}</button>
 			</div>);
     return (
     	<div className="signup">
