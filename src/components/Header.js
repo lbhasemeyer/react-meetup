@@ -10,7 +10,7 @@ class Header extends Component {
   			</h1>
   			<p className="header__tagline">Connecting and Supporting the React Community</p>
 	    </header>
-    );
+    );	
   }
 }
 

@@ -14,16 +14,19 @@ class Events extends Component {
   render() {
     //enter all events by hand here
   	let events = [];
-    events.push({name: 'React Meetup', date: 'April 23, 6pm', location: 'Galvanize Boulder, 1023 Walnut', notes: 'Kombucha provided.'})
-  	events.push({name: 'Dinner in Boulder', date: 'May 23, 7pm', location: 'North Boulder Taco Bell', notes: 'Bring some money!'})
-
+    events.push({name: 'React Denver', date: 'Tuesday, May 15', location: 'Turing School', notes: 'Web Performance API, Rapid Prototyping with AWS & Three Year Anniversary Party'})
+    events.push({name: 'Boulder React', date: 'Thursday, May 17', location: 'Galvanize Boulder', notes: 'Boulder React Coding Night'})
+    events.push({name: 'React Denver', date: 'Tuesday, June 19', location: 'Turing School', notes: ''})
+    events.push({name: 'Boulder React', date: 'Thursday, June 21', location: 'Galvanize Boulder', notes: 'Boulder React Coding Night'})
+ 
     //sort events by date
-    let sortedEvents = this._sortByKey(events, 'date');
+    // let sortedEvents = this._sortByKey(events, 'date');
 
     //build html for all events
     let allEvents = [];
-    sortedEvents.forEach(function(event){
-      let oneEvent = (<span key={event.name}>
+    // sortedEvents.forEach(function(event){
+    events.forEach(function(event){
+      let oneEvent = (<span key={event.name + event.date}>
                         <div className="event__detail-name">{event.name}</div>
                         <div className="event__detail-date-location">{event.date} at {event.location}</div>
                         <div className="event__detail-notes">{event.notes}</div>
