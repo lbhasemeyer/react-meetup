@@ -44,7 +44,7 @@ class Slack extends Component {
    	if(this.state.emailValid && this.state.nameValid) {
 	   	//This is where the name and email are saved from
 		  this.props.addItem(this.state.firstLastName, this.state.email);
-	  	this.setState({buttonText: "Thanks! Please allow 24 hours for invite"});
+	  	this.setState({buttonText: "Thanks! Please check your email to accept invite."});
       //reset state
 	  	this.setState({firstLastName: null});
 	  	this.setState({email: null});
@@ -62,7 +62,7 @@ class Slack extends Component {
   }
   render() {
   	let buttonDisabled = (!this.state.emailValid || !this.state.nameValid)
-  	let buttonWhite = !buttonDisabled || this.state.buttonText === 'Thanks! Please allow 24 hours for invite';
+  	let buttonWhite = !buttonDisabled || this.state.buttonText === 'hanks! Please check your email to accept invite.';
     let emailHasBorder = this.state.emailValid === false;
     let nameHasBorder = this.state.nameValid === false;
     return (
@@ -75,6 +75,8 @@ class Slack extends Component {
   			<div className="signup__inputs-and-button">
   				<input type="email" id="emailInput" name="email" placeholder="Email" style={{border: emailHasBorder ? '2px solid #8a83c2' : null}} onClick={this._resetButtonText} onChange={this._changeEmail} />
   				<input type="text" id="nameInput" name="firstlastname" placeholder="First and Last Name" style={{border: nameHasBorder ? '2px solid #8a83c2' : null}} onClick={this._resetButtonText} onChange={this._changeFirstLastName} />
+			</div>
+  			<div className="signup__inputs-and-button">
   				<button onClick={this._signupClicked} style={{backgroundColor: buttonWhite ? 'white' : 'lightGray'}}>{this.state.buttonText}</button>
   			</div>
   		</div>
