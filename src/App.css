@@ -162,7 +162,11 @@ span.events__react {
   }
   .signup__inputs-and-button input {
     flex: none;
-    width: 100%;
+    width: 90%;
+  }
+  .signup__inputs-and-button button {
+    flex: none;
+    width: 90%;
   }
 }
 @media screen and (max-width: 375px) {
