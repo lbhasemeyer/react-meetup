@@ -160,11 +160,7 @@ span.events__react {
     padding-bottom: 10px;
     padding-top: 20px;
   }
-  .signup__inputs-and-button input {
-    flex: none;
-    width: 90%;
-  }
-  .signup__inputs-and-button button {
+  .signup__inputs-and-button input, .signup__inputs-and-button button {
     flex: none;
     width: 90%;
   }
