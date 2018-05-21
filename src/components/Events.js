@@ -11,10 +11,9 @@ class Events extends Component {
   render() {
     //enter all events by hand here
   	let events = [];
-    events.push({name: 'React Denver', date: 'Tuesday, May 15', time: '6:00pm', location: 'Turing School', site: 'https://www.meetup.com/ReactDenver/events/dprpkpyxhbtb/', notes: 'Web Performance API, Rapid Prototyping with AWS & Three Year Anniversary Party'})
-    events.push({name: 'Boulder React', date: 'Thursday, May 17', time: '6:00pm', location: 'Galvanize Boulder', site: 'https://www.meetup.com/Boulder-React-Meetup/events/250056984/', notes: 'Boulder React Coding Night'})
-    events.push({name: 'React Denver', date: 'Tuesday, June 19', time: '6:00pm', location: 'Turing School', site: 'https://www.meetup.com/ReactDenver/events/247491530/', notes: ''})
-    events.push({name: 'Boulder React', date: 'Thursday, June 21', time: '6:00pm', location: 'Galvanize Boulder', site: 'https://www.meetup.com/Boulder-React-Meetup/events/250056987/', notes: 'Boulder React Coding Night'})
+    events.push({name: 'React Denver', date: 'Tuesday, June 19', time: '6:00pm', location: 'Turing School (Denver)', site: 'https://www.meetup.com/ReactDenver/events/247491530/', notes: 'Monthly Meetup'})
+    events.push({name: 'Boulder React', date: 'Thursday, June 21', time: '6:00pm', location: 'Kapost (Boulder)', site: 'https://www.meetup.com/Boulder-React-Meetup/events/khsprpyxjbcc/', notes: 'Boulder React Coding Night'})
+    events.push({name: 'Boulder React', date: 'Monday, June 25', time: '6:00pm', location: 'Galvanize (Boulder)', site: 'https://www.meetup.com/Boulder-React-Meetup/events/brjrhpyxjbhc/', notes: 'Intro to Testing with Enzyme'})
 
     //build html for all events
     let allEvents = [];
@@ -31,7 +30,7 @@ class Events extends Component {
     return (
         <div className="events">
           <div className="events__title">
-            Upcoming 
+            Upcoming
             <span className="events__react"> React </span>
             Events in Colorado
           </div>
