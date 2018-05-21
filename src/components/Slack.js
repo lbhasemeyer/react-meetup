@@ -43,8 +43,8 @@ class Slack extends Component {
    _signupClicked() {
    	if(this.state.emailValid && this.state.nameValid) {
 	   	//This is where the name and email are saved from
-		  this.props.addItem(this.state.firstLastName, this.state.email);
-	  	this.setState({buttonText: "Thanks! Please check your email, we will send you an invite within 24 hours."});
+		  // this.props.addItem(this.state.firstLastName, this.state.email);
+	  	this.setState({buttonText: "Thanks! Please check your email to accept your Slack invite."});
       //reset state
 	  	this.setState({firstLastName: null});
 	  	this.setState({email: null});
@@ -64,7 +64,7 @@ class Slack extends Component {
   	let buttonDisabled = (!this.state.emailValid || !this.state.nameValid)
     let emailHasBorder = this.state.emailValid === false;
     let nameHasBorder = this.state.nameValid === false;
-		let inputs = (this.state.buttonText === 'Thanks! Please check your email, we will send you an invite within 24 hours.') ?
+		let inputs = (this.state.buttonText === 'Thanks! Please check your email to accept your Slack invite.') ?
 			(<div className="signup__inputs-and-button">
 				<div className="signup__div-success">{this.state.buttonText}</div>
 			</div>):
